@@ -139,4 +139,7 @@ SITE_ID = 2
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'postmaster@sandbox79c090d366f347c5a30bf21ef6cedb53.mailgun.org'
-EMAIL_HOST_PASSWORD = '96224ea5d6678109d588ff7480e150a9-8d821f0c-8e5deeab'
+EMAIL_HOST_PASSWORD = '7b3fdcafc712ad79cf75765d0f305d2a-8d821f0c-dfe6e014'
+
+MEDIA_ROOT = 'media'
+MEDIA_URL = '/media/'

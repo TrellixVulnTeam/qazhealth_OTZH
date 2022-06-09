@@ -1,6 +1,6 @@
 {% include 'header.html' %}
 {% load static %}
-
+{% csrf_token %}
 {% include 'navbar.html' %}
    <!-- health section start -->
    <div class="health_section layout_padding">
@@ -15,7 +15,6 @@
                </div>
                </div>
             </div>
-            <div class="getquote_bt_1"><a href="#">Read More <span><img src="{% static 'images/right-arrow.png' %}"></span></a></div>
          </div>
       </div>
    </div>
