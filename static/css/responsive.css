@@ -142,7 +142,7 @@
     }
     .knowledge_section {
         padding-top: 100px;
-        padding-bottom: 175px;
+        /* padding-bottom: 175px; */
     }
     .Useful_text {
         width: 65%;
@@ -243,7 +243,8 @@
     }
     .knowledge_section {
         background-size: cover;
-        padding: 100px 0px;
+        /* padding: 100px 0px; */
+        padding-bottom: 100px;
     }
     .left_main {
         width: 100%;
@@ -388,7 +389,8 @@
     }
     .knowledge_section {
         background-size: cover;
-        padding: 90px 0px;
+        /* padding: 90px 0px; */
+        padding-bottom: 140px;
     }
     .left_main {
         width: 100%;
@@ -533,7 +535,8 @@
     }
     .knowledge_section {
         background-size: cover;
-        padding: 90px 0px;
+        /* padding: 90px 0px; */
+        padding-bottom: 140px;
     }
     .left_main {
         width: 100%;

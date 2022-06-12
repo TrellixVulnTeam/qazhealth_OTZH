@@ -16,7 +16,7 @@
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
-@import url(font-awesome.min.css);
+@import url(css/font-awesome.min.css);
 @import url(meanmenu.css);
 @import url(owl.carousel.min.css);
 @import url(swiper.min.css);
@@ -502,7 +502,8 @@ button {
     background-size: 100%;
     height: auto;
     background-repeat: no-repeat;
-    padding-top: 180px;
+    padding: 0px;
+    /* padding-top: 180px; */
     padding-bottom: 240px;
 }
 
@@ -512,6 +513,7 @@ button {
 }
 
 .left_main {
+    align-content: flex-start;
     width: 70%;
     float: left;
 }
@@ -522,6 +524,8 @@ button {
 }
 
 .knowledge_taital {
+    display: flex;
+    vertical-align: text-top;
     width: 100%;
     float: left;
     font-size: 40px;
@@ -584,14 +588,10 @@ button {
 .box_main {
     width: 100%;
     float: left;
-    background-color: #252525;
+    /* background-color: #252525; */
     height: auto;
     border-radius: 15px;
     padding: 40px;
-}
-
-.box_main:hover {
-    background-color: #1becde;
 }
 
 .box_main.active {
@@ -604,6 +604,11 @@ button {
     text-align: center;
     padding-bottom: 20px;
     line-height: 95px;
+}
+
+.iphone {
+    display: flex;
+
 }
 
 .daily_text {
@@ -653,8 +658,9 @@ button {
 .contact_section {
     width: 100%;
     float: left;
-    background-image: url(../images/contact-bg.png);
-    background-size: 100%;
+    /* background-image: url(../images/contact-bg.png); */
+    /* background-size: 100%; */
+    background-color: #d7eeef;
     background-repeat: no-repeat;
     padding-bottom: 150px;
 }

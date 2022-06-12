@@ -1,0 +1,104 @@
+{% load static %}
+
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+{% block content %}
+{% endblock content %}
+
+<link href="{% static 'css/sign_up.css' %}" rel="stylesheet">
+<script href="{% static 'js/sign_up.js' %}"></script>
+
+
+    <div class="contact_section layout_padding margin_90">
+        <div class="container">
+            <h1 class="contact_taital">What we do</h1>
+            <div class="news_section_2">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="icon_main">
+                            <div class="icon_7"><img src="{% static 'images/icon-4.png' %}"></div>
+                            <h4 class="diabetes_text">Diabetes and obesity Counselling </h4>
+                        </div>
+                        <div class="icon_main">
+                            <div class="icon_7"><img src="{% static 'images/icon-5.png' %}"></div>
+                            <h4 class="diabetes_text">Obstetrics and Gynsecology</h4>
+                        </div>
+                        <div class="icon_main">
+                            <div class="icon_7"><img src="{% static 'images/icon-6.png' %}"></div>
+                            <h4 class="diabetes_text">Surgical and medical Oncology</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="contact_box" method="post" id="sign_up">
+                            <h1 class="book_text">Зарегистрироваться</h1>
+                            <input type="email" class="Email_text" placeholder="Почта" id="email">
+                            <input type="text" class="Email_text" placeholder="Логин" id="login">
+                            <input type="password" class="Email_text" placeholder="Пароль" id="password">
+                            <input type="password" class="Email_text" placeholder="Повторите пароль" id="repeatPassword">
+                            <div class="send_bt"><a href="#">SEND</a></div>
+                        </form>
+                        <form class="contact_box" method="post" id="sign_in">
+                            <h1 class="book_text">Войти</h1>
+                            <input type="email" class="Email_text" placeholder="Почта" id="email">
+                            <input type="password" class="Email_text" placeholder="Пароль" id="password">
+                            <div class="send_bt"><a href="#">SEND</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+    <script>
+        function check_pass() {
+            document.getElementById('submit').disabled = document.getElementById('password').value !== document.getElementById('confirm_password').value;
+        }
+    </script>
+    <!-- contact section end -->
+</html>

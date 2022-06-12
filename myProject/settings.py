@@ -141,5 +141,8 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'postmaster@sandbox79c090d366f347c5a30bf21ef6cedb53.mailgun.org'
 EMAIL_HOST_PASSWORD = '7b3fdcafc712ad79cf75765d0f305d2a-8d821f0c-dfe6e014'
 
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = '/media/'
 MEDIA_URL = '/media/'
+MEDIAFILES_DIRS = [
+    os.path.join(BASE_DIR, "media")
+]

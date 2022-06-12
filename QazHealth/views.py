@@ -14,15 +14,25 @@ from django.contrib.auth.models import User, auth
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    data = pd.read_csv('media/all_data.csv')
 
+    data_columns = data.columns
+    data_values = data.values
+    context = {
+        'data_columns': data_columns,
+        'data_values': data_values,
+    }
+
+    return render(request, 'index.html', context)
+
+def page(request):
+    return render(request, 'contact.html')
 
 def register(request):
     if request.method == 'POST':
         email = request.POST['email']
         username = request.POST['username']
         password = request.POST['password']
-        password2 = request.POST['repeatPassword']
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()
         return redirect('login')
@@ -34,12 +44,11 @@ def register(request):
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
-        request.user.is_authenticated
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return render(request, 'index.html')
+            return redirect('/')
         else:
             return render(request, 'register.html')
     else:
@@ -66,4 +75,8 @@ def readFile(filename):
 
 
 def predict(request):
-    return render(request, 'predict.html')
+    # csvfile = request.FILES['csv_file']
+    data = pd.read_csv('media/all_data.csv')
+    data_html = data.to_html()
+    context = {'loaded_data': data_html}
+    return render(request, "predict.html", context)
