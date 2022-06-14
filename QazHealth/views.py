@@ -26,7 +26,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 def page(request):
-    return render(request, 'contact.html')
+    return render(request, 'auth.html')
 
 def register(request):
     if request.method == 'POST':
@@ -35,10 +35,10 @@ def register(request):
         password = request.POST['password']
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()
-        return redirect('login')
+        return redirect('signin')
 
     else:
-        return render(request, 'register.html')
+        return render(request, 'auth.html')
 
 
 def login(request):
@@ -50,9 +50,9 @@ def login(request):
             auth.login(request, user)
             return redirect('/')
         else:
-            return render(request, 'register.html')
+            return render(request, 'auth.html')
     else:
-        return render(request, 'login.html')
+        return render(request, 'auth.html')
 
 
 def logout(request):

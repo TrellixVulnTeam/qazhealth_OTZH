@@ -1,0 +1,73 @@
+
+{% include 'header.html' %}
+{% block content %}
+{% endblock content %}
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
+    <script>
+        function check_pass() {
+        document.getElementById('submit').disabled = document.getElementById('password').value !== document.getElementById('repeatPassword').value;
+    }
+    </script>
+    <div class="container" id="container">
+
+	<div class="form-container sign-up-container">
+		<form method="post" action="{% url 'register' %}">
+			<h1>Create Account</h1>
+            {% csrf_token %}
+			<input type="email" required="required" id="email" name="email" placeholder="Email" />
+            <input type="text" required="required" id="username" name="username" placeholder="Login" />
+			<input type="password" required="required" id="password" onchange="check_pass()" name="password"placeholder="Password" />
+            <input type="password" required="required" id="repeatPassword" onchange="check_pass()" name="repeatPassword" placeholder="Repeat password" />
+
+			<button type="submit" id="submit" onchange="check_pass()">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+			<h1>Sign in</h1>
+			<input type="text"  id="username" name="username" placeholder="Login" />
+			<input type="password" placeholder="Password" name="password"/>
+			<a href="#">Forgot your password?</a>
+			<button type="submit">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn" >Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p style="color: #131212">Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+    </div>
+<script id="rendered-js">
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+if(signUpButton) {
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+}
+if(signInButton) {
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+}
+//# sourceURL=pen.js
+
+</script>
+
+    <!-- contact section end -->
+
